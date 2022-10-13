@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+
+  db:
+    image: postgres:13-alpine
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=user
+      - POSTGRES_DB=keycloak
+    ports:
+      - "8432:8432"
+
+  keycloak:
+    image: kbarszczyk/keycloak_prebuilt_example:0.0.4
+    restart: unless-stopped
+    command:
+      - start --import-realm --optimized
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    depends_on:
+      - db
+    volumes:
+      - ./import/example-realm.json:/opt/keycloak/data/import/example-realm.json
+
+volumes:
+  pg_data:

@@ -1,0 +1,10 @@
+server:
+  port: 9000
+
+keycloak:
+  realm: keycloak_example
+  auth-server-url: https://localhost:8443/
+  ssl-required: external
+  resource: keycloak_example
+  use-resource-role-mappings: true
+  bearer-only: true
