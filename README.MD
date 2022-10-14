@@ -2,6 +2,8 @@
 
 #### Rozwiązanie na teraz, nie znalazłem lepszego, certyfikat lokalny wygenerowany przez keycloaka jest uznawany jako nie zaufany ponieważ sami go stworzyliśmy...
 
+NOTE: Można użyć LetsEncrypt i wygenrować darmowy SSL, który jest rozpoznawany przez wszystkie przegladaki - ale trzeba mieć domenę a aplikacja musi być dostepna publicznie. Można wygenerować własny certyfikac CA i za jego pomocą wystawić certy dla aplikacji. Wtedy wystarczy dodać do przeglądarki jeden certyfikat jako zaufane CA, a wszystkie certyfikaty podpisane przet to CA będą zaufane.
+
 Go to URL in your browser:
 firefox - click on HTTPS certificate chain (the lock icon right next to URL address). Click "more info" > "security" > "show certificate" > "details" > "export..". Pickup the name and choose file type example.cer
 chrome - click on site icon left to address in address bar, select "Certificate" -> "Details" -> "Export" and save in format "Der-encoded binary, single certificate".
