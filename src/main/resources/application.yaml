@@ -2,9 +2,9 @@ server:
   port: 9000
 
 keycloak:
-  realm: keycloak_example
-  auth-server-url: https://localhost:8443/
-  ssl-required: external
-  resource: keycloak_example
-  use-resource-role-mappings: true
-  bearer-only: true
+  realm: keycloak_example #nazwa realma
+  auth-server-url: https://localhost:8443/ #adres keycloaka
+  ssl-required: external #ssl tylko dla zewnętrznych requestów, nie dla localhosta
+  resource: keycloak_example #nazwa clienta
+  use-resource-role-mappings: true #czy role maja byc brane z clienta czy globalnie z realma
+  bearer-only: true #jeśli true to oczekuje tylko tokena, jeśli false to będzie nas przekierowywać na stronę logowania keycloaka!
