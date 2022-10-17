@@ -5,61 +5,19 @@ Content-Type: application/x-www-form-urlencoded
 client_id=keycloak_example&username=admin&password=admin&grant_type=password
 
 > {% client.global.set("auth_token", response.body.access_token); %}
-<> 2022-10-13T131916.200.json
-<> 2022-10-13T131821.200.json
-<> 2022-10-13T131756.200.json
-<> 2022-10-13T131232.200.json
 
 ###Get for endpoint which required authentication
 GET http://localhost:9000/test/user
 Authorization: Bearer {{auth_token}}
 
-<> 2022-10-13T131919.200.txt
-<> 2022-10-13T131807.200.txt
-<> 2022-10-13T131237.200.txt
 
 ###Test endpoint which required authentication without token
 GET http://localhost:9000/test/user
-
-<> 2022-10-13T131927-1.200.txt
-<> 2022-10-13T131927.200.txt
-<> 2022-10-13T131925-1.200.txt
-<> 2022-10-13T131925.200.txt
-<> 2022-10-13T131924-1.200.txt
-<> 2022-10-13T131924.200.txt
-<> 2022-10-13T131923.200.txt
-<> 2022-10-13T131921.200.txt
-<> 2022-10-13T131446.200.txt
-<> 2022-10-13T131304.200.txt
-<> 2022-10-13T131303.200.txt
-<> 2022-10-13T131302.200.txt
-<> 2022-10-13T131301.200.txt
-<> 2022-10-13T131244.200.txt
-<> 2022-10-13T131243-1.200.txt
-<> 2022-10-13T131243.200.txt
-<> 2022-10-13T131242.200.txt
-<> 2022-10-13T131241.200.txt
-<> 2022-10-13T131239.200.txt
 
 ###Test endpoint which required authentication and ROLE_ADMIN
 GET http://localhost:9000/test/admin
 Authorization: Bearer {{auth_token}}
 
-<> 2022-10-13T131929.200.txt
-<> 2022-10-13T131828.200.txt
-<> 2022-10-13T131811.403.json
-<> 2022-10-13T131249.403.json
 
 ###Test endpoint - permitAll without required authentication
 GET http://localhost:9000/test/permitAll
-
-<> 2022-10-13T131259-2.200.txt
-<> 2022-10-13T131259-1.200.txt
-<> 2022-10-13T131259.200.txt
-<> 2022-10-13T131258-1.200.txt
-<> 2022-10-13T131258.200.txt
-<> 2022-10-13T131257-2.200.txt
-<> 2022-10-13T131257-1.200.txt
-<> 2022-10-13T131257.200.txt
-<> 2022-10-13T131256.200.txt
-<> 2022-10-13T131252.200.txt
